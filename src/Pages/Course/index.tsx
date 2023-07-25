@@ -1,5 +1,4 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Course as CourseIF, Language } from "src/Interfaces";
 import courseList from "src/data/courses";
 import langList from "src/data/lang";

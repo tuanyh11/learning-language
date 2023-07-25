@@ -1,8 +1,7 @@
-import React, { useId, useState } from "react";
+import { useState } from "react";
 import courseList from "src/data/courses";
 import langList from "src/data/lang";
-import { log, textToSlug } from "src/utils";
-import { RiArrowDownSFill } from "react-icons/ri";
+import { textToSlug } from "src/utils";
 import {
   AiFillCaretDown,
   AiFillCloseSquare,
@@ -12,7 +11,7 @@ import {
 import { BsArrowRight } from "react-icons/bs";
 import Modal from "src/Components/Common/Modal";
 import { Link } from "react-router-dom";
-import useStore, { Store } from "src/store";
+import useStore from "src/store";
 import { Course, Language } from "src/Interfaces";
 
 const Home = () => {

@@ -1,13 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AiFillCaretDown, AiOutlinePlayCircle } from "react-icons/ai";
-import { Link, useLocation } from "react-router-dom";
-import { Lesson as LessonIF } from "src/Interfaces";
+import { Link } from "react-router-dom";
 import { TiSortAlphabetically } from "react-icons/ti";
 import Slider, { CustomArrowProps, Settings } from "react-slick";
 import vocabulary from "src/data/vocabulary";
 import "regenerator-runtime/runtime.js";
-
-// import speechSysthesis from "speech-synthesis";
 
 import {
   BsArrowLeftShort,
@@ -24,15 +20,10 @@ import { textToSlug } from "src/utils";
 import useStore from "src/store";
 import Message from "src/Components/Common/Message";
 
-interface State extends LessonIF {
-  langName: string;
-  courseId: string;
-}
-
 const defaultLang = "zh-CN";
 
 const NextArrow = (props: CustomArrowProps) => {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
 
   return (
     <div
@@ -50,7 +41,7 @@ const NextArrow = (props: CustomArrowProps) => {
 };
 
 const PreArrow = (props: CustomArrowProps) => {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div
       className={`${
@@ -305,7 +296,7 @@ const Lesson = () => {
           <h2 className="">Các bài học khác</h2>
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
-          {currentLesson.map((lesson, i) => {
+          {currentLesson.map((lesson) => {
             return (
               <li
                 key={lesson._id}

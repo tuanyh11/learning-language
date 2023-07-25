@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   AiFillCaretDown,
   AiFillCloseSquare,
   AiFillFacebook,
-  AiFillInstagram,
-  AiFillThunderbolt,
-  AiFillYoutube,
   AiOutlineSearch,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
