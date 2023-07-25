@@ -1,21 +1,24 @@
 import React, { useEffect, useRef } from "react";
 import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
 import { TTSHookProps, TTSHookResponse, useTts } from "tts-react";
+
+export interface TTSHookResponseCustom extends TTSHookResponse {
+  ButtonComponent: () => JSX.Element;
+}
+
 interface CustomProps extends TTSHookProps {
   highlight?: boolean;
   lang: string;
   repeat?: number;
   autoPlay?: boolean;
   icon?: React.ReactNode;
-  component?: (ob: TTSHookResponse) => React.ReactNode;
+  component?: (ob: TTSHookResponseCustom) => React.ReactNode;
 }
 const CustomTTS = ({
   children,
   highlight = false,
   lang = "zh-CN",
-  repeat = 2,
   autoPlay = false,
-  icon,
   component,
 }: CustomProps) => {
   const btnRef = useRef<HTMLButtonElement>(null);
